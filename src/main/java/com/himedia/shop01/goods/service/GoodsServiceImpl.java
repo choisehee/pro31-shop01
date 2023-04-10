@@ -14,6 +14,7 @@ import com.himedia.shop01.goods.vo.GoodsVO;
 import com.himedia.shop01.goods.vo.ImageFileVO;
 
 @Service("goodsService")
+//propagation 속성은 트랜잭션 전파 방식을 설정하는데 사용됩니다. REQUIRED는 기존 트랜잭션이 있으면 해당 트랜잭션에 참여하고, 없으면 새로운 트랜잭션을 생성
 @Transactional(propagation=Propagation.REQUIRED)
 public class GoodsServiceImpl implements GoodsService{
 	
@@ -21,8 +22,12 @@ public class GoodsServiceImpl implements GoodsService{
 	private GoodsDAO goodsDAO;
 
 	public Map<String,List<GoodsVO>> listGoods() throws Exception {
+		// Map 인터페이스를 구현한 HashMap 클래스의 인스턴스를 생성하는 코드
 		Map<String,List<GoodsVO>> goodsMap=new HashMap<String,List<GoodsVO>>();
+		//selectGoodsList 메서드를 호출하여, "bestseller" 상태인 상품 목록을 조회
+		//결과값을 List<GoodsVO> 타입의 변수인 goodsList에 대입
 		List<GoodsVO> goodsList=goodsDAO.selectGoodsList("bestseller");
+		//put() 메소드는 Map 인터페이스에서 제공하는 메소드로, 주어진 키와 값 쌍을 Map 객체에 저장하는 역할
 		goodsMap.put("bestseller",goodsList);
 		goodsList=goodsDAO.selectGoodsList("newbook");
 		goodsMap.put("newbook",goodsList);

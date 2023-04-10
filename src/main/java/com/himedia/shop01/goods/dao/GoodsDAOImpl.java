@@ -20,6 +20,7 @@ public class GoodsDAOImpl implements GoodsDAO{
 
 	@Override
 	public List<GoodsVO> selectGoodsList(String goodsStatus) throws DataAccessException {
+		//"bestseller" 상태인 상품 목록을 조회하는 코드
 		List<GoodsVO> goodsList=(ArrayList)sqlSession.selectList("mapper.goods.selectGoodsList",goodsStatus);
 		   return goodsList;
 	}
