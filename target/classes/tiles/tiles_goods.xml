@@ -2,6 +2,9 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<!-- /goods/goodsDetail레이아웃을 정의하고 상품 상세 정보를 보여줄 JSP 파일을 body 영역으로 사용 -->
+<!-- /goods/searchGoods레이아웃을 정의하고  WEB-INF/views/goods/searchGoods.jsp를 html boody 부분에 출력할 것을 의미한다-->       
 <tiles-definitions>
 	  <definition name="/goods/goodsDetail" extends="baseLayout">
          <put-attribute name="title" value="" />

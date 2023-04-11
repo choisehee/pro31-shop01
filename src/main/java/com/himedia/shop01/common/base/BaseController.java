@@ -21,7 +21,7 @@ import com.himedia.shop01.goods.vo.ImageFileVO;
 public abstract class BaseController {
 	private static final String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
 	
-	
+	//파일 업로드
 	protected List<ImageFileVO> upload(MultipartHttpServletRequest multipartRequest) throws Exception{
 		List<ImageFileVO> fileList= new ArrayList<ImageFileVO>();
 		Iterator<String> fileNames = multipartRequest.getFileNames();
@@ -49,6 +49,7 @@ public abstract class BaseController {
 		return fileList;
 	}
 	
+	//파일삭제
 	private void deleteFile(String fileName) {
 		File file =new File(CURR_IMAGE_REPO_PATH+"\\"+fileName);
 		try{
@@ -58,7 +59,7 @@ public abstract class BaseController {
 		}
 	}
 	
-	
+	//검색기간 계산
 	@RequestMapping(value="/*.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	protected  ModelAndView viewForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
@@ -105,6 +106,8 @@ public abstract class BaseController {
 		beginDay   = df.format(cal.get(Calendar.DATE));
 		beginDate = beginYear +"-"+ beginMonth +"-"+beginDay;
 		
+		//시작일 beginDate 종료일 endDate
+		//기간은 1주일, 2주일, 1개월, 2개월, 3개월, 4개월 중 하나로 설정가능
 		return beginDate+","+endDate;
 	}
 	

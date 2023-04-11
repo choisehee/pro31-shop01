@@ -38,6 +38,7 @@ public class MainController extends BaseController {
 	@Autowired
 	private GoodsService goodsService;
 
+	//경로 "/main/main.do" 및 HTTP 메서드 POST와 GET으로 요청을 처리
 	@RequestMapping(value= "/main/main.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView main(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		HttpSession session;

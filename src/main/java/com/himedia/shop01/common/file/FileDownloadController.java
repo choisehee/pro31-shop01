@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import net.coobird.thumbnailator.Thumbnails;
 
 @Controller
+
 public class FileDownloadController {
 
 	private static String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
 	
-	@RequestMapping("/download")
+	@RequestMapping("/download")//파일 다운로드기능
 	protected void download(@RequestParam("fileName") String fileName,
          	@RequestParam("goods_id") String goods_id,
              HttpServletResponse response) throws Exception {
@@ -41,7 +42,7 @@ public class FileDownloadController {
 		out.close();
 	}
 	
-	@RequestMapping("/thumbnails.do")
+	@RequestMapping("/thumbnails.do")//썸네일 생성 기능
 	protected void thumbnails(@RequestParam("fileName") String fileName,
                             	@RequestParam("goods_id") String goods_id,
 			                 HttpServletResponse response) throws Exception {
@@ -49,7 +50,7 @@ public class FileDownloadController {
 		String filePath=CURR_IMAGE_REPO_PATH+"\\"+goods_id+"\\"+fileName;
 		
 		
-		System.out.println("파일 경로 : "+filePath);
+//		System.out.println("이미지파일 경로 : "+filePath);
 		File image=new File(filePath);
 		
 		if (image.exists()) { 

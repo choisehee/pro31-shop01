@@ -21,6 +21,7 @@ import com.himedia.shop01.goods.vo.GoodsVO;
 
 import net.sf.json.JSONObject;
 
+///goods URL 매핑을 처리하는 메소드를 가지고 있다
 @Controller("goodsController")
 @RequestMapping(value = "/goods")
 public class GoodsControllerImpl extends BaseController implements GoodsController {
@@ -28,6 +29,7 @@ public class GoodsControllerImpl extends BaseController implements GoodsControll
 	@Autowired
 	private GoodsService goodsService;
 
+	//goods_id를 파라미터로 받아 해당 상품의 상세 정보를 가져와서 ModelAndView 객체에 담아 해당하는 뷰를 반환합니다. 또한, 최근 본 상품 리스트에 해당 상품을 추가
 	@Override
 	@RequestMapping(value = "/goodsDetail.do", method = RequestMethod.GET)
 	public ModelAndView goodsDetail(@RequestParam("goods_id") String goods_id, HttpServletRequest request,
@@ -43,6 +45,7 @@ public class GoodsControllerImpl extends BaseController implements GoodsControll
 		return mav;
 	}
 
+	// keyword를 파라미터로 받아 해당하는 상품의 키워드 리스트를 가져와서 JSONObject 형식으로 변환
 	// produces : The producible media types of the mapped request, narrowing the
 	// primary mapping.
 	@RequestMapping(value = "/keywordSearch.do", method = RequestMethod.GET, produces = "application/text; charset=utf8")
@@ -68,6 +71,7 @@ public class GoodsControllerImpl extends BaseController implements GoodsControll
 
 	}
 
+	// searchWord를 파라미터로 받아 해당하는 상품 리스트를 가져와서 ModelAndView 객체에 담아 해당하는 뷰를 반환
 	@Override
 	@RequestMapping(value="/searchGoods.do" ,method = RequestMethod.GET)
 	public ModelAndView searchGoods(@RequestParam("searchWord") String searchWord, HttpServletRequest request, HttpServletResponse response)
@@ -80,6 +84,7 @@ public class GoodsControllerImpl extends BaseController implements GoodsControll
 		return mav;
 	}
 
+//	 최근 본 상품 리스트에 해당 상품을 추가
 	private void addGoodsInQuick(String goods_id, GoodsVO goodsVO, HttpSession session) {
 		boolean already_existed = false;
 		List<GoodsVO> quickGoodsList; // 최근 본 상품 저장 ArrayList

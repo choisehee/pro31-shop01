@@ -253,7 +253,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 			</div>
 			<div class="tab_content" id="tab4">
 				<h4>출판사서평</h4>
-				<p>${fn:replace(goods.goods_publisher_comment ,crcn,br)}</p>
+				<p>${fn:replace(goods.goods_publisher_comment,crcn,br)}</p>
 			</div>
 			<div class="tab_content" id="tab5">
 				<h4>추천사</h4>

@@ -8,6 +8,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 
 //servlet-context에서 인터셉터 설정해놓음
+//모든 컨트롤러에서 공통으로 사용되는 뷰 이름을 추출하여 요청 속성(request attribute)에 저장하는 기능
 public class ViewNameInterceptor extends HandlerInterceptorAdapter {
 
 	

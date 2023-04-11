@@ -45,7 +45,7 @@
 		});
 	});
 
-	//스티키 		
+	//스티키 	고정된(Sticky) 사이드바를 만드는 데 사용	
 	$(function() {
 		$("#sticky").stickySidebar({
 			timer : 100,
