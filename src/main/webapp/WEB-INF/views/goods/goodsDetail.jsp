@@ -46,7 +46,7 @@
 		$.ajax({
 			type : "post",
 			async : false, //false인 경우 동기식으로 처리한다.
-			url : "${contextPath}/cart/addGoodsInCart.do",
+			url : "${contextPath}/cart/addGoodsInCart.do", //ajax를 이용해서 장바구니에 추가할 상품번호 전송
 			data : {
 				goods_id:goods_id
 				
@@ -54,7 +54,7 @@
 			success : function(data, textStatus) {
 				//alert(data);
 			//	$('#message').append(data);
-				if(data.trim()=='add_success'){
+				if(data.trim()=='add_success'){//장바구니에 추가하면 알림창 표시
 					imagePopup('open', '.layer01');	
 				}else if(data.trim()=='already_existed'){
 					alert("이미 카트에 등록된 상품입니다.");	
@@ -215,7 +215,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 				href="javascript:fn_order_each_goods('${goods.goods_id }','${goods.goods_title }','${goods.goods_sales_price}','${goods.goods_fileName}');">구매하기
 			</a></li>
 			<li><a class="cart"
-				href="javascript:add_cart('${goods.goods_id }')">장바구니</a></li>
+				href="javascript:add_cart('${goods.goods_id }')">장바구니</a></li><!-- 장바구니를 클릭하면 추가할 상품번호를 함수로 전달 -->
 
 			<li><a class="wish" href="#">위시리스트</a></li>
 		</ul>
