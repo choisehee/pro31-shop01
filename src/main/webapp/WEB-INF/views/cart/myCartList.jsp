@@ -210,6 +210,8 @@ function fn_order_all_cart_goods(){
 				       <c:set var="cart_goods_qty" value="${myCartList[cnt.count-1].cart_goods_qty}" />
 				       <c:set var="cart_id" value="${myCartList[cnt.count-1].cart_id}" />
 					<td><input type="checkbox" name="checked_goods"  checked  value="${item.goods_id }"  onClick="calcGoodsPrice(${item.goods_sales_price },this)"></td>
+					
+					<!-- 상품이미지 표시 -->
 					<td class="goods_image">
 					<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
 						<img width="75" alt="" src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}"  />
@@ -217,6 +219,7 @@ function fn_order_all_cart_goods(){
 					</td>
 					<td>
 						<h2>
+						<!-- 상품명 표시 -->
 							<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">${item.goods_title }</a>
 						</h2>
 					</td>

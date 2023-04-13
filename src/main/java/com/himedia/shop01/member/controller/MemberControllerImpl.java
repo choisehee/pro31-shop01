@@ -75,8 +75,10 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 	@RequestMapping(value="/addMember.do" ,method = RequestMethod.POST)
 	public ResponseEntity addMember(@ModelAttribute("memberVO") MemberVO _memberVO,
 			                HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("utf-8");
+		
 		String message = null;
 		ResponseEntity resEntity = null;
 		HttpHeaders responseHeaders = new HttpHeaders();

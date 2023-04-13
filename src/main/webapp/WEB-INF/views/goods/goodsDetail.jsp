@@ -86,18 +86,20 @@
 		}
 	}
 	
+	//주문기능
 function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
-	var _isLogOn=document.getElementById("isLogOn");
+	var _isLogOn=document.getElementById("isLogOn");//<hidden>태그 id로 로그인 상태 가져옴
 	var isLogOn=_isLogOn.value;
 	
-	 if(isLogOn=="false" || isLogOn=='' ){
+	 if(isLogOn=="false" || isLogOn=='' ){//로그인상태 확인
 		alert("로그인 후 주문이 가능합니다!!!");
 	} 
 	
 	
 		var total_price,final_total_price;
-		var order_goods_qty=document.getElementById("order_goods_qty");
+		var order_goods_qty=document.getElementById("order_goods_qty");//상품 주문 개수 가져오고 <form>태그를 동적으로 생성
 		
+		//주문 상품정보를 전송할 <input>태그를 동적으로 생성
 		var formObj=document.createElement("form");
 		var i_goods_id = document.createElement("input"); 
     var i_goods_title = document.createElement("input");
@@ -105,6 +107,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
     var i_fileName=document.createElement("input");
     var i_order_goods_qty=document.createElement("input");
     
+    //<input>태그에 name/value로 값을 설정
     i_goods_id.name="goods_id";
     i_goods_title.name="goods_title";
     i_goods_sales_price.name="goods_sales_price";
@@ -117,6 +120,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
     i_goods_sales_price.value=goods_sales_price;
     i_fileName.value=fileName;
     
+    //동적으로 생성한<input>태그에 값을 설정한 후 다시 <form>태그에 추가
     formObj.appendChild(i_goods_id);
     formObj.appendChild(i_goods_title);
     formObj.appendChild(i_goods_sales_price);
@@ -125,6 +129,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 
     document.body.appendChild(formObj); 
     formObj.method="post";
+    //컨트롤러 요청하면<input>태그의 값을 매개변수로 전달
     formObj.action="${contextPath}/order/orderEachGoods.do";
     formObj.submit();
 	}	

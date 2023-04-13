@@ -22,14 +22,14 @@ public class CartServiceImpl  implements CartService{
 	
 	public Map<String ,List> myCartList(CartVO cartVO) throws Exception{
 		Map<String,List> cartMap=new HashMap<String,List>();
-		List<CartVO> myCartList=cartDAO.selectCartList(cartVO);
+		List<CartVO> myCartList=cartDAO.selectCartList(cartVO);// 장바구니 페이지에 표시할 장바구니 정보를 조회
 		if(myCartList.size()==0){ //카트에 저장된 상품이없는 경우
-			return null;
+			return null;//장바구니에 상품이 없는경우 null을 반환
 		}
-		List<GoodsVO> myGoodsList=cartDAO.selectGoodsList(myCartList);
+		List<GoodsVO> myGoodsList=cartDAO.selectGoodsList(myCartList);//장바구니 페이지에 표시할 상품 정보 조회
 		cartMap.put("myCartList", myCartList);
 		cartMap.put("myGoodsList",myGoodsList);
-		return cartMap;
+		return cartMap;//장바구니 정보와 상품 정보를 cartMap에 저장하여 반환
 	}
 	
 	public boolean findCartGoods(CartVO cartVO) throws Exception{//테이블에 추가하기 전에 동일한 상품번호의 개수를 조회
