@@ -24,6 +24,7 @@
 	width: 100%;
 }
 
+/* 장바구니 담았습니다 팝업창 */
 #popup {
 	z-index: 3;
 	position: fixed;

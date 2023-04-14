@@ -28,6 +28,7 @@
 	/* background-color:rgba(0,0,0,0.8); */
 }
 
+/* 최종결제하기 팝업창 */
 #popup_order_detail {
 	z-index: 3;
 	position: fixed;
