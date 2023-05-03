@@ -21,6 +21,15 @@
        <put-attribute name="body" value="/WEB-INF/views/order/orderResult.jsp" />
     </definition>
     
+    <definition name="/order/orderResultFail" extends="baseLayout">
+       <put-attribute name="title" value="결제 실패 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/order/orderResultFail.jsp" />
+    </definition>
+    
+    <definition name="/order/payToOrderGoodsKakao" extends="baseLayout">
+       <put-attribute name="title" value="결제 성공 페이지" />
+       <put-attribute name="body" value="/WEB-INF/views/order/orderResultKakao.jsp" />
+    </definition>
 </tiles-definitions>
 
 

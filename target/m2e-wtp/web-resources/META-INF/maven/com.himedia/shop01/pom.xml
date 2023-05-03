@@ -36,13 +36,13 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		
-			<!-- AOP -->
+
+		<!-- AOP -->
 		<dependency>
-		  <groupId>org.springframework</groupId>
-		  <artifactId>spring-aop</artifactId>
-		  <version>${org.springframework-version}</version>
-	  </dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
 
 		<!-- AspectJ -->
 		<dependency>
@@ -50,18 +50,18 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>
-		
-			<dependency>
-	    <groupId>org.aspectj</groupId>
-	    <artifactId>aspectjweaver</artifactId>
-	    <version>${org.aspectj-version}</version>
-	</dependency>
-	 
-	<dependency>
-	    <groupId>org.aspectj</groupId>
-	    <artifactId>aspectjtools</artifactId>
-	    <version>${org.aspectj-version}</version>
-	</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>
@@ -156,8 +156,8 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.29</version>
 		</dependency>
-		
-		
+
+
 		<!-- High level API to generate and transform Java byte code -->
 		<!-- sqlSessionFactory 만들때 없으면 에러남 -->
 		<dependency>
@@ -180,11 +180,11 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-		
-		
-		
-		
-		
+
+
+
+
+
 		<!-- The MyBatis SQL mapper framework makes it easier to use a relational 
 			database with object-oriented applications. -->
 		<dependency>
@@ -217,10 +217,10 @@
 			<artifactId>tiles-servlet</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-		
-		
-		
-		
+
+
+
+
 		<!-- 파일 업로드 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -235,31 +235,46 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-		
+
 		<!-- 썸네일 이미지 -->
 		<dependency>
 			<groupId>net.coobird</groupId>
 			<artifactId>thumbnailator</artifactId>
 			<version>0.4.8</version>
 		</dependency>
-		
-		<!-- jquery 라이브러리 --> 
-      <dependency>
-        <groupId>org.webjars</groupId>
-        <artifactId>jquery</artifactId>
-        <version>2.2.1</version>
-      </dependency>   
-		
-		
-		
-		 <!-- json -->
-        <dependency>
-		    <groupId>net.sf.json-lib</groupId>
-		    <artifactId>json-lib</artifactId>
-		    <version>2.4</version>
-		    <classifier>jdk15</classifier>    
+
+		<!-- jquery 라이브러리 -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>2.2.1</version>
 		</dependency>
-		
+
+
+
+		<!-- json -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+
+		<!--api를 위한 라이브러리 -->
+		<!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>3.10.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.13.3</version>
+		</dependency>
+
 	</dependencies>
 	<build> <!-- 플러그인은 실제 작업의 대부분이 수행되는 곳이며 플러그인은 jar 파일 생성, war 파일 생성, 코드 컴파일, 단위 테스트 
 			코드, 프로젝트 문서 생성 등의 작업에 사용됩니다. 프로젝트에서 수행할 수 있다고 생각할 수 있는 거의 모든 작업은 Maven 플러그인으로 
@@ -292,8 +307,9 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId><!-- Mojo(maven-old-Java-objec)는 실제로 Maven의 목표 일 뿐이며 플러그인은 여러 목표(Mojos)로 
-					구성됩니다. Mojo는 목표에 대한 메타데이터를 지정합니다. 목표 이름, 라이프사이클의 어느 단계에 해당하는지, 예상되는 매개변수입니다. -->
+				<groupId>org.codehaus.mojo</groupId><!-- Mojo(maven-old-Java-objec)는 
+					실제로 Maven의 목표 일 뿐이며 플러그인은 여러 목표(Mojos)로 구성됩니다. Mojo는 목표에 대한 메타데이터를 지정합니다. 
+					목표 이름, 라이프사이클의 어느 단계에 해당하는지, 예상되는 매개변수입니다. -->
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.2.1</version>
 				<configuration>
@@ -302,18 +318,18 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	
+
+
 	<!-- 오라클 드라이버 라이센스 얻어오는 구문 -->
-	<!--  The lists of the remote repositories for discovering dependencies and 
- extensions.-->	
+	<!-- The lists of the remote repositories for discovering dependencies and 
+		extensions. -->
 	<repositories>
-	<repository>
-           <id>mesir-repo</id>
-           <url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
-       </repository>
+		<repository>
+			<id>mesir-repo</id>
+			<url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
+		</repository>
 	</repositories>
-	
-	
-	
+
+
+
 </project>

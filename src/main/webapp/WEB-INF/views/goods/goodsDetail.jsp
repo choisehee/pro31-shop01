@@ -63,7 +63,9 @@
 				
 			},
 			error : function(data, textStatus) {
-				alert("에러가 발생했습니다."+data);
+				/* alert("에러가 발생했습니다."+data); */
+				alert("로그인 후 장바구니에 담아 주세요");
+				location.href = "${contextPath}/member/loginForm.do"; // 로그인 페이지로 이동
 			},
 			complete : function(data, textStatus) {
 				//alert("작업을완료 했습니다");
